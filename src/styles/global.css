@@ -1,1 +1,34 @@
 @import "tailwindcss";
+
+@theme {
+    --main-color: #F8F3E7;
+    --secondary-color: #470101;
+}
+
+@font-face {
+    font-family: "Madina";
+    src: url("/fonts/Madina.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lora";
+    src: url("/fonts/Lora-Variable.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+h1,
+h2 {
+    font-family: "Madina", ui-serif, Georgia, serif;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lora", ui-serif, Georgia, serif;
+}

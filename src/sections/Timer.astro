@@ -1,0 +1,58 @@
+---
+import TimerBubble from "@/components/TimerBubble.astro";
+---
+
+<div class="flex-1 flex items-center justify-center">
+    <div class="text-center">
+        <p
+            class="text-sm uppercase tracking-[0.3em] text-(--secondary-color) mb-8 font-light"
+        >
+            Nos casamos en
+        </p>
+        <div id="countdown" class="flex gap-12">
+            <TimerBubble id="days" label="Días" />
+            <TimerBubble id="hours" label="Horas" />
+            <TimerBubble id="minutes" label="Minutos" />
+            <TimerBubble id="seconds" label="Segundos" />
+        </div>
+        <p class="text-7xl mt-8 text-(--secondary-color) font-[Madina]">
+            10 de Abril 2026
+        </p>
+    </div>
+</div>
+
+<script>
+    function updateCountdown() {
+        const weddingDate = new Date("2026-04-10T17:00:00").getTime();
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const daysEl = document.getElementById("days");
+        const hoursEl = document.getElementById("hours");
+        const minutesEl = document.getElementById("minutes");
+        const secondsEl = document.getElementById("seconds");
+
+        if (daysEl) daysEl.textContent = days.toString();
+        if (hoursEl) hoursEl.textContent = hours.toString();
+        if (minutesEl) minutesEl.textContent = minutes.toString();
+        if (secondsEl) secondsEl.textContent = seconds.toString();
+
+        if (distance < 0) {
+            if (daysEl) daysEl.textContent = "0";
+            if (hoursEl) hoursEl.textContent = "0";
+            if (minutesEl) minutesEl.textContent = "0";
+            if (secondsEl) secondsEl.textContent = "0";
+        }
+    }
+
+    // Update countdown every second
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+</script>
