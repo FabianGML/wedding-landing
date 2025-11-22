@@ -6,8 +6,15 @@ import { Image } from "astro:assets";
 <section
     class="h-screen flex flex-col-reverse lg:flex-row items-center justify-between py-16 md:py-32 lg:py-0 md:px-36"
 >
-    <div class="marco-arco">
-        <Image src={PamAlex} alt="Pamela y Alex" class="imagen-pareja" />
+    <div class="relative">
+        <!-- Sombra proyectada (atrás) -->
+        <div class="marco-arco sombra-proyectada">
+            <Image src={PamAlex} alt="" class="imagen-pareja" />
+        </div>
+        <!-- Imagen principal (adelante) -->
+        <div class="marco-arco">
+            <Image src={PamAlex} alt="Pamela y Alex" class="imagen-pareja" />
+        </div>
     </div>
     <h1 class="text-9xl md:text-[180px] text-center">Pamela & Alex</h1>
 </section>
@@ -70,5 +77,30 @@ import { Image } from "astro:assets";
         height: 100%;
         object-fit: cover;
         display: block;
+    }
+
+    /* Sombra proyectada - simula luz desde arriba izquierda */
+    .sombra-proyectada {
+        position: absolute;
+        top: 20px;
+        left: -20px;
+        opacity: 0.25;
+        filter: blur(8px) brightness(0.5);
+        transform: rotate(-3deg) scale(0.98);
+        z-index: 0;
+    }
+
+    @media (min-width: 768px) {
+        .sombra-proyectada {
+            top: 25px;
+            left: -25px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .sombra-proyectada {
+            top: 30px;
+            left: -30px;
+        }
     }
 </style>
