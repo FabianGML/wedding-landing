@@ -1,0 +1,42 @@
+---
+interface Props {
+    imageUrl: string;
+    imageAlt: string;
+    cols: number;
+    rows: number;
+    lightboxWidth: number;
+    lightboxHeight: number;
+}
+
+const { imageUrl, cols, rows, imageAlt, lightboxWidth, lightboxHeight } =
+    Astro.props;
+---
+
+<a
+    class="rounded-lg overflow-hidden block glightbox cursor-pointer group bento-item"
+    style={`--cols: ${cols}; --rows: ${rows};`}
+    href={imageUrl}
+    data-gallery="wedding-gallery"
+    data-width={lightboxWidth}
+    data-height={lightboxHeight}
+>
+    <img
+        src={imageUrl}
+        alt={imageAlt}
+        class="object-cover w-full h-full group-hover:scale-110 group-hover:brightness-75 inset-0 transition-all duration-300"
+    />
+</a>
+
+<style>
+    .bento-item {
+        grid-column: span 1;
+        grid-row: span var(--rows);
+    }
+
+    @media (min-width: 768px) {
+        .bento-item {
+            grid-column: span var(--cols);
+            grid-row: span var(--rows);
+        }
+    }
+</style>

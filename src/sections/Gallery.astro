@@ -1,0 +1,42 @@
+---
+import BentoCard from "@/components/BentoCard.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import { GALLERY_IMGS } from "@/constants/gallery";
+import "glightbox/dist/css/glightbox.min.css";
+---
+
+<SectionContainer title="Galería">
+    <div
+        class="grid grid-cols-1 auto-rows-[150px] md:grid-cols-5 md:auto-rows-[190px] lg:grid-cols-7 lg:auto-rows-auto lg:grid-rows-5 gap-4"
+    >
+        {
+            GALLERY_IMGS.map((img, i) => (
+                <BentoCard
+                    cols={img.cols}
+                    rows={img.rows}
+                    imageUrl={`/images/img-${i + 1}.webp`}
+                    imageAlt={img.alt}
+                    lightboxWidth={img.lightboxWidth}
+                    lightboxHeight={img.lightboxHeight}
+                />
+            ))
+        }
+    </div>
+</SectionContainer>
+
+<script>
+    import GLightbox from "glightbox";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        GLightbox({
+            selector: ".glightbox",
+            touchNavigation: true,
+            loop: true,
+            autoplayVideos: false,
+            openEffect: "zoom",
+            closeEffect: "fade",
+            slideEffect: "slide",
+            moreLength: 0,
+        });
+    });
+</script>
