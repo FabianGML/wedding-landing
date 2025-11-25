@@ -15,7 +15,7 @@ importers:
         specifier: 5.16.0
         version: 5.16.0(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)
       glightbox:
-        specifier: ^3.3.1
+        specifier: 3.3.1
         version: 3.3.1
       sharp:
         specifier: 0.34.5
