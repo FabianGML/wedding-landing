@@ -7,12 +7,10 @@ import Map from "@/components/Map.astro";
 <SectionContainer title="Ubicación">
     <div class="flex flex-col md:flex-row lg:flex-row gap-10">
         <div class="map-container w-1/2">
-            <div class="map-inner">
-                <Map />
-            </div>
+            <Map />
         </div>
         <div class="md:w-1/2">
-            <h3 class="text-6xl">Donde</h3>
+            <h3 class="text-6xl mt-7">Donde</h3>
             <p class="text-xl">
                 Te esperamos en:
                 <a
@@ -23,6 +21,18 @@ import Map from "@/components/Map.astro";
                 >
                     Hacienda La Galera
                 </a>
+            </p>
+            <h3 class="text-6xl mt-18">Código de vestimenta</h3>
+            <p class="text-xl">
+                <span class="font-bold">Mujeres</span>: Vestido de Noche
+            </p>
+            <p class="text-xl">
+                <span class="font-bold">Hombres</span>: Traje Completo Formal
+            </p>
+            <h3 class="text-6xl mt-18">Horario</h3>
+            <p class="text-xl">
+                El evento dará inicio a las 18:00 horario de la Ciudad de
+                Durango
             </p>
         </div>
     </div>
@@ -40,15 +50,7 @@ import Map from "@/components/Map.astro";
         box-shadow:
             0 4px 12px rgba(212, 181, 167, 0.2),
             0 8px 24px rgba(0, 0, 0, 0.08);
-        padding: 12px;
-    }
-
-    .map-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        border-radius: 8px;
-        overflow: hidden;
+        padding: 2px;
     }
 
     .map-container::before {

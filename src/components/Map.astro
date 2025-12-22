@@ -2,7 +2,7 @@
 
 ---
 
-<div id="map" class="w-full h-full"></div>
+<div id="map" class="w-full h-full rounded-xl"></div>
 
 <script>
     import L from "leaflet";
@@ -20,9 +20,10 @@
     const cityCenter = L.latLng(24.0277, -104.6532);
     const haciendaGalera = L.latLng(23.9578, -104.6362);
 
-    L.Routing.control({
+    (L.Routing.control as any)({
         waypoints: [cityCenter, haciendaGalera],
-        routeWhileDragging: true,
+        routeWhileDragging: false,
+        show: false,
         language: "es",
         lineOptions: {
             styles: [
@@ -50,16 +51,3 @@
         },
     }).addTo(map);
 </script>
-
-<style>
-    #map {
-        min-height: 400px;
-    }
-
-    :global(.leaflet-routing-container) {
-        background: white;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-</style>
