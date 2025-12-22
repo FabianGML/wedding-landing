@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-    --main-color: #F8F3E7;
-    --secondary-color: #470101;
+    --color-main: #F8F3E7;
+    --color-secondary: #470101;
+    --color-accent: #e1c9be;
 }
 
 @font-face {
@@ -25,10 +26,12 @@ h1,
 h2,
 h3 {
     font-family: "Madina", ui-serif, Georgia, serif;
+    color: var(--color-secondary);
 }
 
 h4,
 h5,
 h6 {
     font-family: "Lora", ui-serif, Georgia, serif;
+    color: var(--color-secondary);
 }

@@ -1,0 +1,65 @@
+---
+
+---
+
+<div id="map" class="w-full h-full"></div>
+
+<script>
+    import L from "leaflet";
+    import "leaflet/dist/leaflet.css";
+    import "leaflet-routing-machine";
+    import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
+
+    const map = L.map("map").setView([24.0277, -104.6532], 10);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    const cityCenter = L.latLng(24.0277, -104.6532);
+    const haciendaGalera = L.latLng(23.9578, -104.6362);
+
+    L.Routing.control({
+        waypoints: [cityCenter, haciendaGalera],
+        routeWhileDragging: true,
+        language: "es",
+        lineOptions: {
+            styles: [
+                { color: "var(--color-secondary)", opacity: 0.8, weight: 6 },
+            ],
+        },
+        createMarker: function (
+            i: number,
+            waypoint: L.Routing.Waypoint,
+            n: number,
+        ): L.Marker {
+            const marker = L.marker(waypoint.latLng, {
+                draggable: false,
+            });
+
+            if (i === 0) {
+                marker.bindPopup("<b>Centro de Durango</b>");
+            } else if (i === n - 1) {
+                marker.bindPopup(
+                    "<b>Hacienda la Galera</b><br>Lugar de la boda",
+                );
+            }
+
+            return marker;
+        },
+    }).addTo(map);
+</script>
+
+<style>
+    #map {
+        min-height: 400px;
+    }
+
+    :global(.leaflet-routing-container) {
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+</style>

@@ -1,23 +1,30 @@
 ---
 import LocationGallery from "@/components/LocationGallery.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
+import Map from "@/components/Map.astro";
 ---
 
 <SectionContainer title="Ubicación">
-    <p class="text-xl">
-        Te esperamos en:
-        <strong>Hacienda La Galera, 34308 Durango, Dgo. México</strong>
-    </p>
-    <div class="map-container">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.1038821051743!2d-104.63838665956384!3d23.95779663233835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869bb9145206c1f9%3A0x55498171569f05ea!2sHacienda%20la%20Galera!5e0!3m2!1ses!2smx!4v1766077250854!5m2!1ses!2smx"
-            title="Hacienda la Galera Location"
-            allowfullscreen=""
-            loading="lazy"
-            class="w-full h-full"
-            referrerpolicy="no-referrer-when-downgrade"
-        >
-        </iframe>
+    <div class="flex flex-col md:flex-row lg:flex-row gap-10">
+        <div class="map-container w-1/2">
+            <div class="map-inner">
+                <Map />
+            </div>
+        </div>
+        <div class="md:w-1/2">
+            <h3 class="text-6xl">Donde</h3>
+            <p class="text-xl">
+                Te esperamos en:
+                <a
+                    href="https://www.google.com/maps?q=Hacienda+La+Galera,+Durango,+Dgo.+México"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-accent rounded-lg px-2 py-1 transition-colors duration-200 text-white hover:cursor-pointer hover:bg-accent/60 hover:text-secondary"
+                >
+                    Hacienda La Galera
+                </a>
+            </p>
+        </div>
     </div>
     <LocationGallery />
 </SectionContainer>
@@ -28,13 +35,20 @@ import SectionContainer from "@/components/SectionContainer.astro";
         width: 100%;
         height: 450px;
         border-radius: 16px;
-        border: 3px solid #d4b5a7;
+        border: 3px solid var(--color-accent);
         background-color: #fff;
-        overflow: hidden;
         box-shadow:
             0 4px 12px rgba(212, 181, 167, 0.2),
             0 8px 24px rgba(0, 0, 0, 0.08);
-        padding: 8px;
+        padding: 12px;
+    }
+
+    .map-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        overflow: hidden;
     }
 
     .map-container::before {
@@ -44,7 +58,7 @@ import SectionContainer from "@/components/SectionContainer.astro";
         left: 12px;
         right: 12px;
         bottom: 12px;
-        border: 2px solid #d4b5a7;
+        border: 2px solid var(--color-accent);
         border-radius: 8px;
         z-index: 10;
         pointer-events: none;
