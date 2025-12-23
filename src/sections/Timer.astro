@@ -1,22 +1,26 @@
 ---
 import TimerBubble from "@/components/TimerBubble.astro";
+import { getI18N } from "@/i18n/index";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <div class="flex-1 flex items-center justify-center border-t border-gray-300">
     <div class="text-center">
         <p class="text-7xl mt-8 text-(--secondary-color) font-[Madina]">
-            10 de Abril 2026
+            {i18n.DATE}
         </p>
         <p
             class="text-sm uppercase tracking-[0.3em] text-(--secondary-color) mb-8 mt-2 font-light"
         >
-            Nos casamos en
+            {i18n.WE_MARRIED}
         </p>
         <div id="countdown" class="flex gap-12">
-            <TimerBubble id="days" label="Días" />
-            <TimerBubble id="hours" label="Horas" />
-            <TimerBubble id="minutes" label="Minutos" />
-            <TimerBubble id="seconds" label="Segundos" />
+            <TimerBubble id="days" label={i18n.DAYS} />
+            <TimerBubble id="hours" label={i18n.HOURS} />
+            <TimerBubble id="minutes" label={i18n.MINUTES} />
+            <TimerBubble id="seconds" label={i18n.SECONDS} />
         </div>
     </div>
 </div>

@@ -3,9 +3,13 @@ import BentoCard from "@/components/BentoCard.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import { GALLERY_IMGS } from "@/constants/gallery";
 import "glightbox/dist/css/glightbox.min.css";
+import { getI18N } from "@/i18n/index";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
-<SectionContainer title="Galería">
+<SectionContainer title={i18n.GALLERY_TITLE}>
     <div
         class="grid grid-cols-1 auto-rows-[150px] md:grid-cols-5 md:auto-rows-[190px] lg:grid-cols-7 lg:auto-rows-auto lg:grid-rows-5 gap-4"
     >

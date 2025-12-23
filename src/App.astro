@@ -1,0 +1,24 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Gallery from "@/sections/Gallery.astro";
+import GiftTable from "@/sections/GiftTable.astro";
+import Header from "@/sections/Header.astro";
+import Hero from "@/sections/Hero.astro";
+import Itinerary from "@/sections/Itinerary.astro";
+import Location from "@/sections/Location.astro";
+import Timer from "@/sections/Timer.astro";
+import { getI18N } from "@/i18n/index";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<Layout description={i18n.SEO_DESCRIPTION}>
+    <Header />
+    <Hero />
+    <Timer />
+    <Location />
+    <Itinerary />
+    <Gallery />
+    <GiftTable />
+</Layout>

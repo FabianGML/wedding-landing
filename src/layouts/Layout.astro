@@ -1,5 +1,7 @@
 ---
 import "@/styles/global.css";
+
+const { description } = Astro.props;
 ---
 
 <!doctype html>
@@ -10,6 +12,7 @@ import "@/styles/global.css";
 		<meta name="description" content="Pamela & Alex wedding" />
 		<link rel="icon" type="image/svg+xml" href="/images/img-2.webp" />
 		<title>Pamela & Alex wedding</title>
+		<meta name="description" content={description} />
 	</head>
 	<body>
 		<slot />

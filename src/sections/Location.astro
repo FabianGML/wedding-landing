@@ -2,17 +2,21 @@
 import LocationGallery from "@/components/LocationGallery.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Map from "@/components/Map.astro";
+import { getI18N } from "@/i18n/index";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
-<SectionContainer title="Ubicación">
+<SectionContainer title={i18n.LOCATION_TITLE}>
     <div class="flex flex-col md:flex-row lg:flex-row gap-10">
         <div class="map-container w-1/2">
             <Map />
         </div>
         <div class="md:w-1/2">
-            <h3 class="text-6xl mt-7">Donde</h3>
+            <h3 class="text-6xl mt-7">{i18n.LOCATION_SECTION_TITLE_1}</h3>
             <p class="text-xl">
-                Te esperamos en:
+                {i18n.LOCATION_SECTION_DESC_1}
                 <a
                     href="https://www.google.com/maps?q=Hacienda+La+Galera,+Durango,+Dgo.+México"
                     target="_blank"
@@ -22,17 +26,11 @@ import Map from "@/components/Map.astro";
                     Hacienda La Galera
                 </a>
             </p>
-            <h3 class="text-6xl mt-18">Código de vestimenta</h3>
+            <h3 class="text-6xl mt-18">{i18n.LOCATION_SECTION_TITLE_2}</h3>
+            <data set:html={i18n.LOCATION_SECTION_DESC_2} />
+            <h3 class="text-6xl mt-18">{i18n.LOCATION_SECTION_TITLE_3}</h3>
             <p class="text-xl">
-                <span class="font-bold">Mujeres</span>: Vestido de Noche
-            </p>
-            <p class="text-xl">
-                <span class="font-bold">Hombres</span>: Traje Completo Formal
-            </p>
-            <h3 class="text-6xl mt-18">Horario</h3>
-            <p class="text-xl">
-                El evento dará inicio a las 18:00 horario de la Ciudad de
-                Durango
+                {i18n.LOCATION_SECTION_DESC_3}
             </p>
         </div>
     </div>
