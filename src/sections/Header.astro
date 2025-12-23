@@ -1,0 +1,71 @@
+---
+import MexicoIcon from "@/assets/images/mexico.webp";
+import GermanyIcon from "@/assets/images/germany.webp";
+import UsIcon from "@/assets/images/us.webp";
+import { Image } from "astro:assets";
+import Lenguague from "@/components/Lenguague.astro";
+
+interface Options {
+    [key: string]: {
+        description: string;
+        icon: any;
+    };
+}
+const { currentLocale } = Astro;
+const options: Options = {
+    es: {
+        description: "Español",
+        icon: MexicoIcon,
+    },
+    de: {
+        description: "Deutsch",
+        icon: GermanyIcon,
+    },
+    en: {
+        description: "English",
+        icon: UsIcon,
+    },
+};
+const currentLang = currentLocale ?? "es";
+const currentOption = options[currentLang];
+---
+
+<header class="language-selector fixed right-12 bottom-7 z-50">
+    <nav class="relative">
+        <ul class="flex flex-col items-center gap-2">
+            {
+                Object.entries(options)
+                    .filter(([lang]) => lang !== currentLang)
+                    .map(([lang, option]) => (
+                        <Lenguague
+                            href={`/${lang}`}
+                            icon={option.icon}
+                            description={option.description}
+                        />
+                    ))
+            }
+            <li class="current-language">
+                <Image
+                    src={currentOption.icon}
+                    alt={currentOption.description}
+                    class="object-cover block w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-lg hover:scale-110 transition-transform cursor-pointer"
+                />
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    .language-selector:hover :global(.language-option) {
+        opacity: 1;
+        translate: 0 0;
+    }
+
+    .language-selector:hover :global(.language-option:nth-child(1)) {
+        transition-delay: 100ms;
+    }
+
+    .language-selector:hover :global(.language-option:nth-child(2)) {
+        transition-delay: 50ms;
+    }
+</style>

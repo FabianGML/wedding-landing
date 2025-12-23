@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+    href: string;
+    icon: any;
+    description: string;
+}
+
+const { href, icon, description } = Astro.props;
+---
+
+<li
+    class="language-option opacity-0 transition-all duration-300 translate-y-2 relative"
+>
+    <a
+        href={href === "/es" ? "/" : href}
+        class="language-link block w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-lg hover:scale-110 transition-transform relative"
+    >
+        <Image src={icon} alt="English" class="w-full h-full object-cover" />
+    </a>
+    <span class="language-description">{description}</span>
+</li>
+
+<style>
+    .language-description {
+        position: absolute;
+        right: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-right: 12px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .language-option:hover .language-description {
+        opacity: 1;
+    }
+</style>
