@@ -13,7 +13,11 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<Layout description={i18n.SEO_DESCRIPTION}>
+<Layout
+    title="Pamela & Alex wedding"
+    description={i18n.SEO_DESCRIPTION}
+    lang={currentLocale}
+>
     <Header />
     <Hero />
     <Timer />
