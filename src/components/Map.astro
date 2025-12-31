@@ -6,6 +6,13 @@
     import "leaflet-routing-machine";
     import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 
+    delete (L.Icon.Default.prototype as any)._getIconUrl;
+    L.Icon.Default.mergeOptions({
+        iconRetinaUrl: "/leaflet-icons/marker-icon-2x.png",
+        iconUrl: "/leaflet-icons/marker-icon.png",
+        shadowUrl: "/leaflet-icons/marker-shadow.png",
+    });
+
     const map = L.map("map").setView([24.0277, -104.6532], 10);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
