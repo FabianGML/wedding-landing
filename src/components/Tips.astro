@@ -1,0 +1,47 @@
+---
+import { getI18N } from "@/i18n";
+import TipCard from "./TipCard.astro";
+import restaurants from "@/assets/images/restaurant.webp";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+export interface Cards {
+    title: string;
+    mainImg: ImageMetadata;
+    spots: Spot[];
+}
+export interface Spot {
+    name: string;
+    description: string;
+    mapUrl: string;
+    websiteUrl: string;
+}
+
+const cards: Cards[] = [
+    {
+        title: i18n.TIPS_FOOD,
+        mainImg: restaurants,
+        spots: [
+            {
+                name: "Tacos Arandas",
+                description: i18n.TIPS_FOOD_DESC_1,
+                mapUrl: "https://maps.app.goo.gl/6nodgUq9fACGX7Yw7",
+                websiteUrl: "",
+            },
+        ],
+    },
+];
+---
+
+<section class="mt-24 lg:grid lg:grid-cols-2">
+    {
+        cards.map((card) => (
+            <TipCard
+                title={card.title}
+                spots={card.spots}
+                contentImg={card.mainImg}
+            />
+        ))
+    }
+</section>

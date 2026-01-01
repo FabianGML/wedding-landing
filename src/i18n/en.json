@@ -13,5 +13,12 @@
     "LOCATION_SECTION_DESC_2": "<p class='text-xl'><span class='font-bold'>Women</span>: Evening gown</p><p class='text-xl'><span class='font-bold'>Men</span>: Complete formal suit</p>",
     "LOCATION_SECTION_TITLE_3": "Schedule",
     "LOCATION_SECTION_DESC_3": "The event will begin at 18:00 local time",
-    "GALLERY_TITLE": "Gallery"
+    "GALLERY_TITLE": "Gallery",
+    "TIPS_TITLE": "Travel Tips",
+    "TIPS_SUBTITLE": "Recommendations to make your stay in Durango unforgettable",
+    "TIPS_ACCOMMODATION": "Accommodation",
+    "TIPS_FOOD": "Food",
+    "TIPS_FOOD_DESC_1": "",
+    "TIPS_DRESS_RENTAL": "Dress Rental",
+    "TIPS_SUIT_RENTAL": "Suit Rental"
 }

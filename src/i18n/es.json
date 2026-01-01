@@ -13,5 +13,11 @@
     "LOCATION_SECTION_DESC_2": "<p class='text-xl'><span class='font-bold'>Mujeres</span>: Vestido de Noche</p><p class='text-xl'><span class='font-bold'>Hombres</span>: Traje Completo Formal</p>",
     "LOCATION_SECTION_TITLE_3": "Horario",
     "LOCATION_SECTION_DESC_3": "El evento dará inicio a las 18:00 horario de la Ciudad de Durango",
-    "GALLERY_TITLE": "Galería"
+    "GALLERY_TITLE": "Galería",
+    "TIPS_TITLE": "Tips de Viaje",
+    "TIPS_ACCOMMODATION": "Alojamiento",
+    "TIPS_FOOD": "Comida",
+    "TIPS_FOOD_DESC_1": "Tipicos tacos Mexicanos estilo Arandas",
+    "TIPS_DRESS_RENTAL": "Renta de Vestidos",
+    "TIPS_SUIT_RENTAL": "Renta de Trajes"
 }

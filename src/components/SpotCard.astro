@@ -1,0 +1,43 @@
+---
+import mapIcon from "@/assets/svgs/map.svg";
+import websiteIcon from "@/assets/svgs/website.svg";
+import { Image } from "astro:assets";
+
+interface Pops {
+    name: string;
+    description: string;
+    mapUrl: string;
+    websiteUrl: string;
+}
+
+const { name, description, mapUrl, websiteUrl } = Astro.props;
+---
+
+<article class="rounded-xl relative bg-[#efe8d6] px-3 py-2">
+    <div class="border border-amber-400 rounded-xl px-3 py-2">
+        <h4 class="text-2xl color-primary">{name}</h4>
+        <p>{description}</p>
+        <div class="flex gap-2 absolute right-4 bottom-4">
+            <a href={mapUrl}>
+                <Image src={mapIcon} alt="Map" />
+            </a>
+            {
+                websiteUrl && (
+                    <a href={websiteUrl}>
+                        <Image src={websiteIcon} alt="Website" />
+                    </a>
+                )
+            }
+        </div>
+    </div>
+</article>
+
+<style>
+    a {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    a:hover {
+        transform: scale(1.15);
+    }
+</style>
