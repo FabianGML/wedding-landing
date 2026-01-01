@@ -13,8 +13,8 @@ interface Pops {
 const { name, description, mapUrl, websiteUrl } = Astro.props;
 ---
 
-<article class="rounded-xl relative bg-[#efe8d6] px-3 py-2">
-    <div class="border border-amber-400 rounded-xl px-3 py-2">
+<article class="rounded-xl relative bg-[#efe8d6] px-2 py-1">
+    <div class="border border-amber-400 rounded-xl px-2 py-1">
         <h4 class="text-2xl color-primary">{name}</h4>
         <p>{description}</p>
         <div class="flex gap-2 absolute right-4 bottom-4">
@@ -33,6 +33,11 @@ const { name, description, mapUrl, websiteUrl } = Astro.props;
 </article>
 
 <style>
+    article {
+        box-shadow:
+            0 3px 8px rgba(0, 0, 0, 0.08),
+            0 2px 5px rgba(0, 0, 0, 0.04);
+    }
     a {
         transition: transform 0.2s ease-in-out;
     }
