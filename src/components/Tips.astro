@@ -15,7 +15,8 @@ export interface Spot {
     name: string;
     description: string;
     mapUrl: string;
-    websiteUrl: string;
+    websiteUrl?: string;
+    igUrl?: string;
 }
 
 const cards: Cards[] = [
@@ -24,22 +25,22 @@ const cards: Cards[] = [
         mainImg: restaurants,
         spots: [
             {
-                name: "Tacos Arandas",
+                name: "Restaurante La Victoria",
                 description: i18n.TIPS_FOOD_DESC_1,
-                mapUrl: "https://maps.app.goo.gl/6nodgUq9fACGX7Yw7",
-                websiteUrl: "",
+                mapUrl: "https://www.google.com/maps/place/Restaurante+La+Victoria/data=!4m2!3m1!1s0x869bc8233a0c8ddd:0xbd41b583aa03d54?sa=X&ved=1t:242&ictx=111",
             },
             {
-                name: "Tacos Arandas",
-                description: i18n.TIPS_FOOD_DESC_1,
-                mapUrl: "https://maps.app.goo.gl/6nodgUq9fACGX7Yw7",
-                websiteUrl: "",
+                name: "Rincón Ma' Elena",
+                description: i18n.TIPS_FOOD_DESC_2,
+                mapUrl: "https://www.google.com/maps/place/Rinc%C3%B3n+Ma'+Elena/@24.0249002,-104.65342,17z/data=!3m1!4b1!4m6!3m5!1s0x869bb780a8446237:0x9aeb9fe849f569cb!8m2!3d24.0249002!4d-104.65342!16s%2Fg%2F11rq3_57vt?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+                websiteUrl: "https://www.hmariaelena.com/comidasycenas",
+                igUrl: "https://www.instagram.com/rincon_ma.elena/?hl=es",
             },
             {
-                name: "Tacos Arandas",
-                description: i18n.TIPS_FOOD_DESC_1,
+                name: "El tomatito taqueria",
+                description: i18n.TIPS_FOOD_DESC_3,
                 mapUrl: "https://maps.app.goo.gl/6nodgUq9fACGX7Yw7",
-                websiteUrl: "",
+                igUrl: "https://www.instagram.com/reel/DSLSoGxAdNl/",
             },
         ],
     },

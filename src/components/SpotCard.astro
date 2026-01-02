@@ -1,30 +1,47 @@
 ---
 import mapIcon from "@/assets/svgs/map.svg";
 import websiteIcon from "@/assets/svgs/website.svg";
+import igIcon from "@/assets/svgs/instagram.svg";
 import { Image } from "astro:assets";
 
 interface Pops {
     name: string;
     description: string;
     mapUrl: string;
-    websiteUrl: string;
+    websiteUrl?: string;
+    igUrl?: string;
 }
 
-const { name, description, mapUrl, websiteUrl } = Astro.props;
+const { name, description, mapUrl, websiteUrl, igUrl } = Astro.props;
 ---
 
 <article class="rounded-xl relative bg-[#efe8d6] px-2 py-1">
-    <div class="border border-amber-400 rounded-xl px-2 py-1">
-        <h4 class="text-2xl color-primary">{name}</h4>
-        <p>{description}</p>
-        <div class="flex gap-2 absolute right-4 bottom-4">
+    <div class="border border-amber-700 rounded-xl px-2 py-1">
+        <h4 class="text-xs md:text-xl color-primary">{name}</h4>
+        <p class="text-[.5rem] md:text-sm">{description}</p>
+        <div class="flex gap-2 absolute right-4 top-3">
             <a href={mapUrl}>
-                <Image src={mapIcon} alt="Map" />
+                <Image src={mapIcon} alt="Map" class="size-3 md:size-5" />
             </a>
             {
                 websiteUrl && (
                     <a href={websiteUrl}>
-                        <Image src={websiteIcon} alt="Website" />
+                        <Image
+                            src={websiteIcon}
+                            alt="Website"
+                            class="size-3 md:size-5"
+                        />
+                    </a>
+                )
+            }
+            {
+                igUrl && (
+                    <a href={igUrl}>
+                        <Image
+                            src={igIcon}
+                            alt="Instagram"
+                            class="size-3 md:size-5"
+                        />
                     </a>
                 )
             }
@@ -37,6 +54,10 @@ const { name, description, mapUrl, websiteUrl } = Astro.props;
         box-shadow:
             0 3px 8px rgba(0, 0, 0, 0.08),
             0 2px 5px rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s ease-in-out;
+    }
+    article:hover {
+        transform: scale(1.05);
     }
     a {
         transition: transform 0.2s ease-in-out;
