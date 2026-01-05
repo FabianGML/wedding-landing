@@ -43,10 +43,16 @@
             });
 
             if (i === 0) {
-                marker.bindPopup("<b>Centro de Durango</b>");
-            } else if (i === n - 1) {
+                const lat = waypoint.latLng.lat;
+                const lng = waypoint.latLng.lng;
                 marker.bindPopup(
-                    "<b>Hacienda la Galera</b><br>Lugar de la boda",
+                    `<b>Centro de Durango</b><br><a href="https://www.google.com/maps?q=${lat},${lng}" target="_blank" rel="noopener noreferrer" style="color: #470101; text-decoration: underline;">Abrir en Google Maps</a>`,
+                );
+            } else if (i === n - 1) {
+                const lat = waypoint.latLng.lat;
+                const lng = waypoint.latLng.lng;
+                marker.bindPopup(
+                    `<b>Hacienda la Galera</b><br>Lugar de la boda<br><a href="https://www.google.com/maps?q=${lat},${lng}" target="_blank" rel="noopener noreferrer" style="color: #470101; text-decoration: underline;">Abrir en Google Maps</a>`,
                 );
             }
 

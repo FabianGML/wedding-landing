@@ -1,0 +1,89 @@
+---
+import { getI18N } from "@/i18n";
+import TipCard from "@/components/TipCard.astro";
+import restaurants from "@/assets/images/restaurant.webp";
+import suit from "@/assets/images/suit.webp";
+import dress from "@/assets/images/dress.webp";
+import SectionContainer from "@/components/SectionContainer.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+export interface Cards {
+    title: string;
+    mainImg: ImageMetadata;
+    spots: Spot[];
+}
+export interface Spot {
+    name: string;
+    description: string;
+    mapUrl: string;
+    websiteUrl?: string;
+    igUrl?: string;
+}
+
+const cards: Cards[] = [
+    {
+        title: i18n.TIPS_FOOD,
+        mainImg: restaurants,
+        spots: [
+            {
+                name: "Restaurante La Victoria",
+                description: i18n.TIPS_FOOD_DESC_1,
+                mapUrl: "https://www.google.com/maps/place/Restaurante+La+Victoria/data=!4m2!3m1!1s0x869bc8233a0c8ddd:0xbd41b583aa03d54?sa=X&ved=1t:242&ictx=111",
+            },
+            {
+                name: "Rincón Ma' Elena",
+                description: i18n.TIPS_FOOD_DESC_2,
+                mapUrl: "https://www.google.com/maps/place/Rinc%C3%B3n+Ma'+Elena/@24.0249002,-104.65342,17z/data=!3m1!4b1!4m6!3m5!1s0x869bb780a8446237:0x9aeb9fe849f569cb!8m2!3d24.0249002!4d-104.65342!16s%2Fg%2F11rq3_57vt?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+                websiteUrl: "https://www.hmariaelena.com/comidasycenas",
+                igUrl: "https://www.instagram.com/rincon_ma.elena/?hl=es",
+            },
+            {
+                name: "El tomatito taqueria",
+                description: i18n.TIPS_FOOD_DESC_3,
+                mapUrl: "https://www.google.com/maps/place/El+tomatito+taqueria/data=!4m2!3m1!1s0x869bb730701a21af:0xc0b8d10b4b0a94f3?sa=X&ved=1t:242&ictx=111",
+                igUrl: "https://www.instagram.com/reel/DSLSoGxAdNl/",
+            },
+        ],
+    },
+    {
+        title: i18n.TIPS_SUIT_RENTAL,
+        mainImg: suit,
+        spots: [
+            {
+                name: "H Ivonne Flores",
+                description: i18n.TIPS_SUIT_RENTAL_DESC_1,
+                mapUrl: "https://www.google.com/maps/place/H+Ivonne+Flores+Renta+de+trajes/data=!4m2!3m1!1s0x0:0x4ee9ed8b7b8ee39d?sa=X&ved=1t:2428&ictx=111",
+                igUrl: "https://www.instagram.com/h_ivonne_flores_/?hl=es-la",
+            },
+        ],
+    },
+    {
+        title: i18n.TIPS_DRESS_RENTAL,
+        mainImg: dress,
+        spots: [
+            {
+                name: "Magnifique",
+                description: i18n.TIPS_DRESS_RENTAL_DESC_1,
+                mapUrl: "https://www.google.com/maps/place/Magnifique+Renta+y+Venta+de+Vestidos+Zona+Centro/data=!4m2!3m1!1s0x0:0x3cdc25f70f72e6ab?sa=X&ved=1t:2428&hl=es-419&gl=mx&ictx=111&cshid=1767643394200752",
+                igUrl: "https://www.instagram.com/magnifique.rentadevestidos/?hl=es",
+            },
+        ],
+    },
+];
+---
+
+<SectionContainer title={i18n.TIPS_TITLE}>
+    <div class="mt-24 lg:grid lg:grid-cols-2">
+        {
+            cards.map((card) => (
+                <TipCard
+                    title={card.title}
+                    spots={card.spots}
+                    contentImg={card.mainImg}
+                />
+            ))
+        }
+    </div>
+</SectionContainer>

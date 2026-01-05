@@ -15,12 +15,15 @@
     "LOCATION_SECTION_DESC_3": "The event will begin at 18:00 local time",
     "GALLERY_TITLE": "Gallery",
     "TIPS_TITLE": "Travel Tips",
+    "TIPS_MAIN_DESC": "Don't know where to eat or where to rent a suit? Don't worry, here are some suggestions our family gave us.",
     "TIPS_SUBTITLE": "Recommendations to make your stay in Durango unforgettable",
     "TIPS_ACCOMMODATION": "Accommodation",
     "TIPS_FOOD": "Food",
-    "TIPS_FOOD_DESC_1": "",
-    "TIPS_FOOD_DESC_2": "",
-    "TIPS_FOOD_DESC_3": "",
+    "TIPS_FOOD_DESC_1": "Typical Mexican tacos Arandas style",
+    "TIPS_FOOD_DESC_2": "Breakfast, Lunch, Dinner, Bakery and Coffee",
+    "TIPS_FOOD_DESC_3": "Taco Restaurant",
+    "TIPS_SUIT_RENTAL": "Suit Rental",
+    "TIPS_SUIT_RENTAL_DESC_1": "Suits that will make you look like you actually care what others think",
     "TIPS_DRESS_RENTAL": "Dress Rental",
-    "TIPS_SUIT_RENTAL": "Suit Rental"
+    "TIPS_DRESS_RENTAL_DESC_1": "Rental of different dress models"
 }

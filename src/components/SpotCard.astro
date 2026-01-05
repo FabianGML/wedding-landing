@@ -20,12 +20,12 @@ const { name, description, mapUrl, websiteUrl, igUrl } = Astro.props;
         <h4 class="text-xs md:text-xl color-primary">{name}</h4>
         <p class="text-[.5rem] md:text-sm">{description}</p>
         <div class="flex gap-2 absolute right-4 top-3">
-            <a href={mapUrl}>
+            <a href={mapUrl} target="_blank">
                 <Image src={mapIcon} alt="Map" class="size-3 md:size-5" />
             </a>
             {
                 websiteUrl && (
-                    <a href={websiteUrl}>
+                    <a href={websiteUrl} target="_blank">
                         <Image
                             src={websiteIcon}
                             alt="Website"
@@ -36,7 +36,7 @@ const { name, description, mapUrl, websiteUrl, igUrl } = Astro.props;
             }
             {
                 igUrl && (
-                    <a href={igUrl}>
+                    <a href={igUrl} target="_blank">
                         <Image
                             src={igIcon}
                             alt="Instagram"

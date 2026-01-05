@@ -15,11 +15,14 @@
     "LOCATION_SECTION_DESC_3": "El evento dará inicio a las 18:00 horario de la Ciudad de Durango",
     "GALLERY_TITLE": "Galería",
     "TIPS_TITLE": "Tips de Viaje",
+    "TIPS_MAIN_DESC": "No sabes donde comer o donde rentar un traje? No te preocupes, aquí te dejamos algunas sugerencias que nuestra familia nos dio.",
     "TIPS_ACCOMMODATION": "Alojamiento",
     "TIPS_FOOD": "Comida",
     "TIPS_FOOD_DESC_1": "Tipicos tacos Mexicanos estilo Arandas",
     "TIPS_FOOD_DESC_2": "Desayunos, Comidas, Cenas, Reposteria y Café",
     "TIPS_FOOD_DESC_3": "Restaurante de Tacos ",
+    "TIPS_SUIT_RENTAL": "Renta de Trajes",
+    "TIPS_SUIT_RENTAL_DESC_1": "Trajes que te harán lucir como si realmente te importara lo que los demás piensen",
     "TIPS_DRESS_RENTAL": "Renta de Vestidos",
-    "TIPS_SUIT_RENTAL": "Renta de Trajes"
+    "TIPS_DRESS_RENTAL_DESC_1": "Renta de diferentes modelos de vestidos"
 }

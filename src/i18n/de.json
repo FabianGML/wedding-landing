@@ -15,12 +15,15 @@
     "LOCATION_SECTION_DESC_3": "Die Veranstaltung beginnt um 18:00 Uhr Ortszeit in Durango",
     "GALLERY_TITLE": "Galerie",
     "TIPS_TITLE": "Reisetipps",
+    "TIPS_MAIN_DESC": "Sie wissen nicht, wo Sie essen oder einen Anzug mieten können? Keine Sorge, hier sind einige Vorschläge, die uns unsere Familie gegeben hat.",
     "TIPS_SUBTITLE": "Empfehlungen, um Ihren Aufenthalt in Durango unvergesslich zu machen",
     "TIPS_ACCOMMODATION": "Unterkunft",
     "TIPS_FOOD": "Essen",
-    "TIPS_FOOD_DESC_1": "",
-    "TIPS_FOOD_DESC_2": "",
-    "TIPS_FOOD_DESC_3": "",
+    "TIPS_FOOD_DESC_1": "Typische mexikanische Tacos im Arandas-Stil",
+    "TIPS_FOOD_DESC_2": "Frühstück, Mittagessen, Abendessen, Bäckerei und Kaffee",
+    "TIPS_FOOD_DESC_3": "Taco-Restaurant",
+    "TIPS_SUIT_RENTAL": "Anzugverleih",
+    "TIPS_SUIT_RENTAL_DESC_1": "Anzüge, die Sie so aussehen lassen, als ob Ihnen wirklich wichtig wäre, was andere denken",
     "TIPS_DRESS_RENTAL": "Kleiderverleih",
-    "TIPS_SUIT_RENTAL": "Anzugverleih"
+    "TIPS_DRESS_RENTAL_DESC_1": "Verleih verschiedener Kleidmodelle"
 }
