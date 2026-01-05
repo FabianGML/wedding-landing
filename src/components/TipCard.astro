@@ -15,7 +15,7 @@ const { title, spots, contentImg } = Astro.props;
 <article class="relative">
     <Image src={tipCard} alt="Tip Card" />
     <div
-        class="absolute h-4/5 w-7/9 md:w-6/8 top-1/7 left-1/12 md:right-2/13 flex md:gap-5 items-center"
+        class="absolute h-4/5 w-7/9 md:w-6/8 top-1/7 md:top-1/10 left-1/12 md:right-2/13 flex md:gap-5 items-center"
     >
         <Image
             src={contentImg}
@@ -24,7 +24,7 @@ const { title, spots, contentImg } = Astro.props;
             style="object-position: left center;"
         />
         <div class="flex flex-col gap-2 flex-2">
-            <h3 class="absolute left-0 top-5 md:static text-3xl md:text-6xl">
+            <h3 class="absolute left-0 top-5 md:static text-3xl md:text-5xl">
                 {title}
             </h3>
             {
