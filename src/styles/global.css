@@ -25,6 +25,107 @@
 body {
     background: url(/public/images/bg.webp) repeat;
     background-size: 100%;
+    position: relative;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    background: url(/public/images/encaje.webp) repeat;
+    transform: translateY(-10%);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+body::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background-size: auto 80px;
+}
+
+body::after {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background-size: auto 80px;
+    transform: rotate(180deg) translateY(-10%);
+}
+
+html::before,
+html::after {
+    content: '';
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url(/public/images/encaje.webp);
+    background-repeat: repeat;
+}
+
+html::before {
+    left: 0;
+    top: 50%;
+    width: 100vh;
+    height: 80px;
+    background-size: auto 80px;
+    transform: translateX(-48%) translateY(-50%) rotate(-90deg);
+    transform-origin: center;
+}
+
+html::after {
+    right: 0;
+    top: 50%;
+    width: 100vh;
+    height: 80px;
+    background-size: auto 80px;
+    transform: translateX(48%) translateY(-70%) rotate(90deg);
+    transform-origin: center;
+}
+
+@media (max-width: 768px) {
+
+    body::before,
+    body::after {
+        height: 40px;
+        background-size: auto 40px;
+    }
+
+    html::before,
+    html::after {
+        height: 40px;
+        background-size: auto 40px;
+        transform: translateX(-48%) translateY(-50%) rotate(-90deg);
+    }
+
+    html::after {
+        transform: translateX(48%) translateY(-70%) rotate(90deg);
+    }
+}
+
+@media (max-width: 480px) {
+
+    body::before,
+    body::after {
+        height: 20px;
+        background-size: auto 30px;
+    }
+
+    html::before,
+    html::after {
+        height: 20px;
+        background-size: auto 30px;
+    }
+
+    html::before {
+        transform: translateX(-49%) translateY(-50%) rotate(-90deg);
+    }
+
+    html::after {
+        transform: translateX(49%) translateY(-50%) rotate(90deg);
+    }
 }
 
 h1,
