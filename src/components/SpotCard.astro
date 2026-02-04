@@ -16,37 +16,39 @@ const { name, description, mapUrl, websiteUrl, igUrl } = Astro.props;
 ---
 
 <article class="rounded-xl relative bg-[#efe8d6] px-2 py-1">
-    <div class="border border-amber-700 rounded-xl px-2 py-1">
-        <h4 class="text-xs md:text-xl color-primary">{name}</h4>
-        <p class="text-[.5rem] md:text-sm">{description}</p>
-        <div class="flex gap-2 absolute right-4 top-3">
-            <a href={mapUrl} target="_blank">
-                <Image src={mapIcon} alt="Map" class="size-3 md:size-5" />
-            </a>
-            {
-                websiteUrl && (
-                    <a href={websiteUrl} target="_blank">
-                        <Image
-                            src={websiteIcon}
-                            alt="Website"
-                            class="size-3 md:size-5"
-                        />
-                    </a>
-                )
-            }
-            {
-                igUrl && (
-                    <a href={igUrl} target="_blank">
-                        <Image
-                            src={igIcon}
-                            alt="Instagram"
-                            class="size-3 md:size-5"
-                        />
-                    </a>
-                )
-            }
+    <a href={igUrl} target="_blank">
+        <div class="border border-amber-700 rounded-xl px-2 py-1">
+            <h4 class="text-xs md:text-xl color-primary">{name}</h4>
+            <p class="text-[.5rem] md:text-sm">{description}</p>
+            <div class="flex gap-2 absolute right-4 top-3">
+                <a href={mapUrl} target="_blank">
+                    <Image src={mapIcon} alt="Map" class="size-3 md:size-5" />
+                </a>
+                {
+                    websiteUrl && (
+                        <a href={websiteUrl} target="_blank">
+                            <Image
+                                src={websiteIcon}
+                                alt="Website"
+                                class="size-3 md:size-5"
+                            />
+                        </a>
+                    )
+                }
+                {
+                    igUrl && (
+                        <a href={igUrl} target="_blank">
+                            <Image
+                                src={igIcon}
+                                alt="Instagram"
+                                class="size-3 md:size-5"
+                            />
+                        </a>
+                    )
+                }
+            </div>
         </div>
-    </div>
+    </a>
 </article>
 
 <style>
