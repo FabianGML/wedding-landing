@@ -1,9 +1,23 @@
+---
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
 <section class="w-11/12 lg:w-full max-w-6xl mx-auto py-8">
     <div class="relative mx-auto rounded-2xl overflow-hidden shadow-md">
         <div class="h-1.5 w-full bg-secondary"></div>
         <div class="border border-t-0 border-accent rounded-b-2xl px-10 py-8 bg-accent/30">
             <p class="text-xl md:text-2xl leading-relaxed italic" style="font-family: 'Lora', ui-serif, Georgia, serif; color: var(--color-secondary);">
-                Queremos que esta celebración también la disfrutes al máximo, por eso hemos decidido <strong class="not-italic font-bold px-1.5 py-0.5 rounded" style="background-color: var(--color-secondary); color: var(--color-main);">no</strong> extender la invitación a los <strong class="not-italic font-bold px-1.5 py-0.5 rounded" style="background-color: var(--color-secondary); color: var(--color-main);">niños</strong>.
+                {i18n.IMPORTANT_DESC_1}
+                <strong class="not-italic font-bold px-1.5 py-0.5 rounded" style="background-color: var(--color-secondary); color: var(--color-main);">
+                    {i18n.IMPORTANT_STRONG_1}
+                </strong> 
+                {i18n.IMPORTANT_DESC_2}
+                <strong class="not-italic font-bold px-1.5 py-0.5 rounded" style="background-color: var(--color-secondary); color: var(--color-main);">
+                    {i18n.IMPORTANT_STRONG_2}
+                </strong>.
             </p>
         </div>
     </div>
