@@ -36,5 +36,10 @@
     "TIPS_HOTEL": "Hotels",
     "TIPS_HOTEL_DESC_1": "Hotel Gobernador, located on Durango's main avenue with excellent service and full facilities",
     "TIPS_HOTEL_DESC_2": "Hotel inside a small plaza where you can find restaurants",
-    "TIPS_HOTEL_DESC_3": "Typical colonial hotel located in the city center with a vintage look"
+    "TIPS_HOTEL_DESC_3": "Typical colonial hotel located in the city center with a vintage look",
+    "GIFTS_DESC_1": "Your presence is our greatest gift, but if you wish to give us a little something, we will have an",
+    "GIFTS_STRONG_1": "envelope box",
+    "GIFTS_DESC_2": "for a",
+    "GIFTS_STRONG_2": "shower of envelopes",
+    "GIFTS_DESC_3": "at the reception."
 }
