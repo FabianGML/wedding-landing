@@ -7,14 +7,16 @@ import { Image } from "astro:assets";
     class="flex flex-col-reverse items-center justify-between pt-8 pb-16 md:py-32 md:px-36 lg:h-lvh lg:py-0 lg:flex-row max-w-7xl mx-auto"
     transition:persist
 >
-    <div class="relative w-full">
-        <!-- Sombra proyectada -->
-        <div class="marco-arco sombra-proyectada">
-            <Image src={PamAlex} alt="" class="imagen-pareja" />
-        </div>
-        <!-- Imagen principal -->
-        <div class="marco-arco">
-            <Image src={PamAlex} alt="Pamela y Alex" class="imagen-pareja" />
+    <div class="w-full flex justify-center">
+        <div class="relative">
+            <!-- Sombra proyectada -->
+            <div class="marco-arco sombra-proyectada">
+                <Image src={PamAlex} alt="" class="imagen-pareja" />
+            </div>
+            <!-- Imagen principal -->
+            <div class="marco-arco">
+                <Image src={PamAlex} alt="Pamela y Alex" class="imagen-pareja" />
+            </div>
         </div>
     </div>
     <h1 class="text-8xl md:text-[180px] text-center">Pamela & Alex</h1>
