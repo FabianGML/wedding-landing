@@ -9,6 +9,7 @@ import Timer from "@/sections/Timer.astro";
 import { getI18N } from "@/i18n/index";
 import Tips from "@/sections/Tips.astro";
 import Important from "@/sections/Important.astro";
+import Analytics from '@vercel/analytics/astro'
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
@@ -27,4 +28,5 @@ const i18n = getI18N({ currentLocale });
     <Tips />
     <Gallery />
     <GiftTable />
+    <Analytics />
 </Layout>
