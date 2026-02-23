@@ -4,6 +4,7 @@ import TipCard from "@/components/TipCard.astro";
 import restaurants from "@/assets/images/restaurant.webp";
 import suit from "@/assets/images/suit.webp";
 import dress from "@/assets/images/dress.webp";
+import hotel from "@/assets/images/hotel.webp";
 import SectionContainer from "@/components/SectionContainer.astro";
 
 const { currentLocale } = Astro;
@@ -57,6 +58,12 @@ const cards: Cards[] = [
                 mapUrl: "https://www.google.com/maps/place/H+Ivonne+Flores+Renta+de+trajes/data=!4m2!3m1!1s0x0:0x4ee9ed8b7b8ee39d?sa=X&ved=1t:2428&ictx=111",
                 igUrl: "https://www.instagram.com/h_ivonne_flores_/?hl=es-la",
             },
+            {
+                name: "DPaul",
+                description: i18n.TIPS_SUIT_RENTAL_DESC_2,
+                mapUrl: "https://www.google.com/maps/place/H+Ivonne+Flores+Renta+de+trajes/data=!4m2!3m1!1s0x0:0x4ee9ed8b7b8ee39d?sa=X&ved=1t:2428&ictx=111",
+                igUrl: "https://www.instagram.com/dpauldurango",
+            },
         ],
     },
     {
@@ -64,10 +71,48 @@ const cards: Cards[] = [
         mainImg: dress,
         spots: [
             {
-                name: "Magnifique",
+                name: "Marsala Vestidos",
                 description: i18n.TIPS_DRESS_RENTAL_DESC_1,
-                mapUrl: "https://www.google.com/maps/place/Magnifique+Renta+y+Venta+de+Vestidos+Zona+Centro/data=!4m2!3m1!1s0x0:0x3cdc25f70f72e6ab?sa=X&ved=1t:2428&hl=es-419&gl=mx&ictx=111&cshid=1767643394200752",
-                igUrl: "https://www.instagram.com/magnifique.rentadevestidos/?hl=es",
+                mapUrl: "https://www.google.com/maps/place/Marsala+Vestidos/@24.0191966,-104.6946922,17z/data=!3m1!4b1!4m6!3m5!1s0x869bb7dc6ee03007:0xd087a056a8d18f55!8m2!3d24.0191917!4d-104.6921173!16s%2Fg%2F11cn8s8ytf?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D",
+                igUrl: "https://www.instagram.com/marsalavestidos",
+            },
+            {
+                name: "Blessboutique",
+                description: i18n.TIPS_DRESS_RENTAL_DESC_2,
+                mapUrl: "https://www.google.com/maps/place/BLESS+brides+and+boutique/@24.0093768,-104.7052517,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgIC-2tzfugE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHVAwerr6sveSTNgYoH2pwEQCjdRHGc4DaFrGf3b2EncQpIVIQLs06YEjrAyXfIDF1JKVCzHKvFPt3doC3EozrGe5FO9DnKYqpihjaXBK2V36yhYz8_-fZu-r4oN_SXwiLeiKP7yLBkH2g%3Dw86-h114-k-no!7i3024!8i4032!4m11!1m2!2m1!1sbless+boutique!3m7!1s0x869bc90c6f63de87:0x16768340deea782e!8m2!3d24.0094499!4d-104.7050916!10e5!15sCg5ibGVzcyBib3V0aXF1ZVoQIg5ibGVzcyBib3V0aXF1ZZIBCGJvdXRpcXVl4AEA!16s%2Fg%2F11jz7yw8p7?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D",
+                igUrl: "https://www.instagram.com/blessboutique.mx",
+            },
+            {
+                name: "Vanella vestidos",
+                description: i18n.TIPS_DRESS_RENTAL_DESC_3,
+                mapUrl: "https://www.google.com/maps/place/Vanella+Venta+y+Renta+de+Vestidos/@24.0097159,-104.713916,17z/data=!3m1!4b1!4m6!3m5!1s0x869bc92011112a1b:0x800975c770fee036!8m2!3d24.009711!4d-104.7113411!16s%2Fg%2F11sy_dd2jx?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D",
+                igUrl: "https://www.instagram.com/vanella_vestidos",
+            },
+        ],
+    },
+    {
+        title: i18n.TIPS_HOTEL,
+        mainImg: hotel,
+        spots: [
+            {
+                name: "Hotel Gobernador",
+                description: i18n.TIPS_HOTEL_DESC_1,
+                mapUrl: "https://www.google.com/maps/place/Hotel+Gobernador/@24.0268239,-104.6644739,17z/data=!4m9!3m8!1s0x869bc8203590180f:0x6be8c6f10f922d69!5m2!4m1!1i2!8m2!3d24.026819!4d-104.661899!16s%2Fg%2F11b6gcynt5?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D",
+                websiteUrl: "http://www.hotelgobernador.com.mx/",
+                igUrl: "https://www.instagram.com/hotelgobernador",
+            },
+            {
+                name: "Hampton Inn",
+                description: i18n.TIPS_HOTEL_DESC_2,
+                mapUrl: "https://www.google.com/maps/place/Hampton+Inn+by+Hilton+Durango/@24.0316227,-104.6422086,18.84z/data=!4m9!3m8!1s0x869bb7c15eb1c3a3:0xd755a60c1fc6b095!5m2!4m1!1i2!8m2!3d24.0316984!4d-104.6411201!16s%2Fg%2F11bwq6yvcg?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D",
+                websiteUrl: "https://www.hilton.com/es/hotels/dgohxhx-hampton-durango/",
+                igUrl: "https://www.instagram.com/hamptonbyhiltondgo/",
+            },
+            {
+                name: "Posada San Agustin",
+                description: i18n.TIPS_HOTEL_DESC_3,
+                mapUrl: "https://www.google.com/maps/place/Hotel+Posada+San+Agustin/@24.0243789,-104.6755919,17z/data=!3m1!5s0x869bc83d79ef7d55:0xd7fa97845d997d9e!4m10!3m9!1s0x869bc822112ba107:0x783484b8b8b4d4d4!5m3!1s2026-03-21!4m1!1i2!8m2!3d24.024374!4d-104.673017!16s%2Fg%2F1pp2t_7pz?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D",
+                igUrl: "https://www.instagram.com/posadasanagustin/",
             },
         ],
     },
