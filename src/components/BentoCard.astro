@@ -1,6 +1,7 @@
 ---
 interface Props {
     imageUrl: string;
+    imageBentoUrl:string
     imageAlt: string;
     cols: number;
     rows: number;
@@ -8,7 +9,7 @@ interface Props {
     lightboxHeight: number;
 }
 
-const { imageUrl, cols, rows, imageAlt, lightboxWidth, lightboxHeight } =
+const { imageUrl, imageBentoUrl, cols, rows, imageAlt, lightboxWidth, lightboxHeight } =
     Astro.props;
 ---
 
@@ -21,7 +22,7 @@ const { imageUrl, cols, rows, imageAlt, lightboxWidth, lightboxHeight } =
     data-height={lightboxHeight}
 >
     <img
-        src={imageUrl}
+        src={imageBentoUrl}
         alt={imageAlt}
         class="object-cover w-full h-full group-hover:scale-110 group-hover:brightness-75 inset-0 transition-all duration-300"
     />

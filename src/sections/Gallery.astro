@@ -9,7 +9,8 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<SectionContainer title={i18n.GALLERY_TITLE}>
+<section class="w-11/12 lg:w-full max-w-380 mx-auto py-24">
+    <h3 class="text-8xl text-center md:text-start">{i18n.GALLERY_TITLE}</h3>
     <div
         class="grid grid-cols-1 auto-rows-[150px] md:grid-cols-5 md:auto-rows-[190px] lg:grid-cols-7 lg:auto-rows-auto lg:grid-rows-5 gap-4"
     >
@@ -19,6 +20,7 @@ const i18n = getI18N({ currentLocale });
                     cols={img.cols}
                     rows={img.rows}
                     imageUrl={`/images/img-${i + 1}.webp`}
+                    imageBentoUrl={`/images/bento/img-${i + 1}.webp`}
                     imageAlt={img.alt}
                     lightboxWidth={img.lightboxWidth}
                     lightboxHeight={img.lightboxHeight}
@@ -26,7 +28,7 @@ const i18n = getI18N({ currentLocale });
             ))
         }
     </div>
-</SectionContainer>
+</section>
 
 <script>
     import GLightbox from "glightbox";
