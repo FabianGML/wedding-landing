@@ -6,6 +6,7 @@ import { Image } from "astro:assets";
 import LocationCard from "@/components/LocationCard.astro";
 // --- Imagenes ---
 import marco from "@/assets/images/location/marco.webp";
+import marcoVertical from "@/assets/images/location/marcoVertical.webp";
 import hacienda from "@/assets/images/location/hacienda.webp";
 import dressCode from "@/assets/images/location/dressCode.webp";
 import horario from "@/assets/images/location/horario.webp";
@@ -15,12 +16,15 @@ const i18n = getI18N({ currentLocale });
 ---
 
 <SectionContainer>
-    <div class="flex flex-col md:flex-row lg:flex-row gap-10 relative">
-        <Image src={marco} alt="Marco" class="w-full h-full" />
-        <h3 class="text-6xl absolute top-1/5 left-1/2 -translate-x-1/2">
+    <!-- Mobile layout (< md) — marcoVertical.webp -->
+    <div class="md:hidden relative">
+        <Image src={marcoVertical} alt="Marco" class="w-full h-auto" />
+        <h3 class="text-3xl absolute top-[8%] left-1/2 -translate-x-1/2">
             {i18n.LOCATION_TITLE}
         </h3>
-        <div class="absolute flex top-[26%] justify-evenly w-full">
+        <div
+            class="absolute flex flex-col items-center gap-1 top-[12%] left-1/2 md:left-1/2 -translate-x-1/2 w-full"
+        >
             <LocationCard
                 title={i18n.LOCATION_SECTION_TITLE_1}
                 image={hacienda}
@@ -30,7 +34,46 @@ const i18n = getI18N({ currentLocale });
                     href="https://www.google.com/maps?q=Hacienda+La+Galera,+Durango,+Dgo.+México"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="bg-accent rounded-lg px-2 py-1 transition-colors duration-200 text-white hover:cursor-pointer hover:bg-accent/60 hover:text-secondary block w-fit"
+                    class="text-sm lg:text-lg bg-accent rounded-lg px-1 py-0.5 lg:px-2 lg:py-1 transition-colors duration-200 text-white hover:cursor-pointer hover:bg-accent/60 hover:text-secondary block w-fit"
+                >
+                    Hacienda La Galera
+                </a>
+            </LocationCard>
+            <LocationCard
+                title={i18n.LOCATION_SECTION_TITLE_2}
+                image={dressCode}
+            >
+                <data set:html={i18n.LOCATION_SECTION_DESC_2} />
+            </LocationCard>
+            <LocationCard title={i18n.LOCATION_SECTION_TITLE_3} image={horario}>
+                {i18n.LOCATION_SECTION_DESC_3}
+            </LocationCard>
+        </div>
+    </div>
+
+    <!-- Desktop layout (md+) — marco.webp -->
+    <div
+        class="hidden md:flex flex-col md:flex-row lg:flex-row gap-10 relative"
+    >
+        <Image src={marco} alt="Marco" class="w-full h-full" />
+        <h3
+            class="text-4xl lg:text-6xl absolute top-1/5 left-1/2 -translate-x-1/2"
+        >
+            {i18n.LOCATION_TITLE}
+        </h3>
+        <div
+            class="absolute flex top-[26%] justify-evenly left-1/14 w-12/14 lg:left-0 lg:w-full"
+        >
+            <LocationCard
+                title={i18n.LOCATION_SECTION_TITLE_1}
+                image={hacienda}
+            >
+                {i18n.LOCATION_SECTION_DESC_1}
+                <a
+                    href="https://www.google.com/maps?q=Hacienda+La+Galera,+Durango,+Dgo.+México"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-accent rounded-lg px-1 py-0.5 lg:px-2 lg:py-1 transition-colors duration-200 text-white hover:cursor-pointer hover:bg-accent/60 hover:text-secondary block w-fit"
                 >
                     Hacienda La Galera
                 </a>
