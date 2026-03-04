@@ -15,7 +15,7 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<SectionContainer>
+<section>
     <!-- Mobile layout (< md) — marcoVertical.webp -->
     <div class="md:hidden relative">
         <Image src={marcoVertical} alt="Marco" class="w-full h-auto" />
@@ -57,7 +57,7 @@ const i18n = getI18N({ currentLocale });
     >
         <Image src={marco} alt="Marco" class="w-full h-full" />
         <h3
-            class="text-4xl lg:text-6xl absolute top-1/5 left-1/2 -translate-x-1/2"
+            class="text-4xl lg:text-7xl absolute top-1/5 left-1/2 -translate-x-1/2"
         >
             {i18n.LOCATION_TITLE}
         </h3>
@@ -90,7 +90,7 @@ const i18n = getI18N({ currentLocale });
         </div>
     </div>
     <LocationGallery />
-</SectionContainer>
+</section>
 
 <style>
     .map-container {
