@@ -1,37 +1,49 @@
 ---
 import LocationGallery from "@/components/LocationGallery.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
-import Map from "@/components/Map.astro";
 import { getI18N } from "@/i18n/index";
+import { Image } from "astro:assets";
+import LocationCard from "@/components/LocationCard.astro";
+// --- Imagenes ---
+import marco from "@/assets/images/location/marco.webp";
+import hacienda from "@/assets/images/location/hacienda.webp";
+import dressCode from "@/assets/images/location/dressCode.webp";
+import horario from "@/assets/images/location/horario.webp";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
 <SectionContainer>
-    <div class="flex flex-col md:flex-row lg:flex-row gap-10">
-        <div class="map-container w-1/2">
-            <Map />
-        </div>
-        <div class="md:w-1/2">
-            <h3 class="text-6xl mt-7">{i18n.LOCATION_SECTION_TITLE_1}</h3>
-            <p class="text-xl">
+    <div class="flex flex-col md:flex-row lg:flex-row gap-10 relative">
+        <Image src={marco} alt="Marco" class="w-full h-full" />
+        <h3 class="text-6xl absolute top-1/5 left-1/2 -translate-x-1/2">
+            {i18n.LOCATION_TITLE}
+        </h3>
+        <div class="absolute flex top-[26%] justify-evenly w-full">
+            <LocationCard
+                title={i18n.LOCATION_SECTION_TITLE_1}
+                image={hacienda}
+            >
                 {i18n.LOCATION_SECTION_DESC_1}
                 <a
                     href="https://www.google.com/maps?q=Hacienda+La+Galera,+Durango,+Dgo.+México"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="bg-accent rounded-lg px-2 py-1 transition-colors duration-200 text-white hover:cursor-pointer hover:bg-accent/60 hover:text-secondary"
+                    class="bg-accent rounded-lg px-2 py-1 transition-colors duration-200 text-white hover:cursor-pointer hover:bg-accent/60 hover:text-secondary block w-fit"
                 >
                     Hacienda La Galera
                 </a>
-            </p>
-            <h3 class="text-6xl mt-18">{i18n.LOCATION_SECTION_TITLE_2}</h3>
-            <data set:html={i18n.LOCATION_SECTION_DESC_2} />
-            <h3 class="text-6xl mt-18">{i18n.LOCATION_SECTION_TITLE_3}</h3>
-            <p class="text-xl">
+            </LocationCard>
+            <LocationCard
+                title={i18n.LOCATION_SECTION_TITLE_2}
+                image={dressCode}
+            >
+                <data set:html={i18n.LOCATION_SECTION_DESC_2} />
+            </LocationCard>
+            <LocationCard title={i18n.LOCATION_SECTION_TITLE_3} image={horario}>
                 {i18n.LOCATION_SECTION_DESC_3}
-            </p>
+            </LocationCard>
         </div>
     </div>
     <LocationGallery />
