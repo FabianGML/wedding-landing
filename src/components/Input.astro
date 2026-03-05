@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import input from "@/assets/images/form/input.webp";
+interface Props {
+    label: string;
+    type: "text" | "number";
+    name: string;
+}
+const { label, type, name } = Astro.props;
+---
+
+<div class="relative">
+    <Image src={input} alt="input" class="w-full" />
+    <label for={label}>{label}</label>
+    <input type={type} class="absolute inset-0 w-full h-full px-4" />
+</div>

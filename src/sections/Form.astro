@@ -1,0 +1,20 @@
+---
+import SectionContainer from "@/components/SectionContainer.astro";
+import Input from "@/components/Input.astro";
+import { Image } from "astro:assets";
+import mobileForm from "@/assets/images/form/mobileForm.webp";
+---
+
+<SectionContainer>
+    <div class="relative">
+        <Image src={mobileForm} alt="mobile form" class="w-full" />
+        <form
+            class="absolute w-11/12 left-1/2 -translate-x-1/2 top-1/2 -translate-y-10"
+        >
+            <div>
+                <Input label="Name" name="" type="text" />
+                <Input label="Person" name="" type="number" />
+            </div>
+        </form>
+    </div>
+</SectionContainer>
