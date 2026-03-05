@@ -23,11 +23,13 @@ const i18n = getI18N({ currentLocale });
             src={mobileForm}
             alt="form background"
             class="w-full lg:hidden"
+            loading="lazy"
         />
         <Image
             src={form}
             alt="form background"
             class="w-full hidden lg:block"
+            loading="lazy"
         />
         <form
             class="absolute w-11/12 left-1/2 -translate-x-1/2 top-1/4 h-9/12 lg:h-5/12 lg:top-4/7"
@@ -56,6 +58,7 @@ const i18n = getI18N({ currentLocale });
                         src={buttonImg}
                         alt="submit button"
                         class="transition-all duration-200 group-hover:scale-105 group-hover:brightness-90 group-active:scale-95"
+                        loading="lazy"
                     />
                     <span
                         class="absolute top-1/2 -translate-y-5 text-4xl transition-all duration-200 group-hover:scale-105 group-active:scale-95"
