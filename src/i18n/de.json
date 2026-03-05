@@ -42,5 +42,8 @@
     "GIFTS_DESC_2": "für einen",
     "GIFTS_STRONG_2": "Umschlagregen",
     "GIFTS_DESC_3": "bereit.",
-    "BUTTON_TEXT": "Schicken"
+    "BUTTON_TEXT": "Schicken",
+    "FORM_TEXT": "Es würde uns sehr freuen, Sie an einem der wichtigsten Tage unseres Lebens bei uns zu haben. Wir möchten diesen besonderen Moment umgeben von den Menschen feiern, die wir am meisten lieben, und Sie gehören zu dieser Geschichte. Um uns zu helfen, jeden Detail bestmöglich zu organisieren, bitten wir Sie, Ihre Teilnahme durch das folgende Formular zu bestätigen. Es dauert nur einen Moment. Ihre Anwesenheit wird diesen Tag für uns noch unvergesslicher machen. Vielen Dank, dass Sie diese ganz besondere Feier mit uns teilen!",
+    "FORM_NAME_INPUT": "Name",
+    "FORM_PERSONS_INPUT": "Anzahl der Personen"
 }

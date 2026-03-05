@@ -41,5 +41,8 @@
     "GIFTS_DESC_2": "para",
     "GIFTS_STRONG_2": "lluvia de sobres",
     "GIFTS_DESC_3": "en la recepción.",
-    "BUTTON_TEXT": "Enviar"
+    "BUTTON_TEXT": "Enviar",
+    "FORM_TEXT": "Nos llenaría de alegría contar con tu presencia en uno de los días más importantes de nuestras vidas.Queremos compartir este momento tan especial rodeados de las personas que más queremos, y tú eres parte de esa historia.Para ayudarnos a organizar cada detalle de la mejor manera, te pedimos que confirmes tu asistencia llenando el siguiente formulario. No te tomará más que un momento.Tu presencia hará que este día sea aún más inolvidable para nosotros.¡Gracias por acompañarnos en esta celebración tan especial!",
+    "FORM_NAME_INPUT": "Nombre",
+    "FORM_PERSONS_INPUT": "Numero de Personas"
 }

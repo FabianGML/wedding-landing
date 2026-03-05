@@ -42,5 +42,8 @@
     "GIFTS_DESC_2": "for a",
     "GIFTS_STRONG_2": "shower of envelopes",
     "GIFTS_DESC_3": "at the reception.",
-    "BUTTON_TEXT": "Send"
+    "BUTTON_TEXT": "Send",
+    "FORM_TEXT": "It would fill us with joy to have you with us on one of the most important days of our lives. We want to share this special moment surrounded by the people we love most, and you are part of that story. To help us organize every detail in the best way, we ask you to confirm your attendance by filling out the form below. It won't take more than a moment. Your presence will make this day even more unforgettable for us. Thank you for joining us in this very special celebration!",
+    "FORM_NAME_INPUT": "Name",
+    "FORM_PERSONS_INPUT": "Number of persons"
 }
