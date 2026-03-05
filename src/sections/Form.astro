@@ -4,25 +4,54 @@ import Input from "@/components/Input.astro";
 import { Image } from "astro:assets";
 // ----- Images -----
 import mobileForm from "@/assets/images/form/mobileForm.webp";
-import buttonImg from "@/assets/images/form/button.webp"
+import form from "@/assets/images/form/form.webp";
+import buttonImg from "@/assets/images/form/button.webp";
 import { getI18N } from "@/i18n";
 
-const { currentLocale } = Astro
-const i18n = getI18N({currentLocale})
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <SectionContainer>
-    <div class="relative">
-        <Image src={mobileForm} alt="mobile form" class="w-full" />
+    <div class="relative lg:p-48">
+        <Image
+            src={mobileForm}
+            alt="form background"
+            class="w-full lg:hidden"
+        />
+        <Image
+            src={form}
+            alt="form background"
+            class="w-full hidden lg:block"
+        />
         <form
-            class="absolute w-11/12 left-1/2 -translate-x-1/2 top-1/2 -translate-y-10 h-96"
+            class="absolute w-11/12 left-1/2 -translate-x-1/2 top-1/4 h-9/12 lg:h-5/12 lg:top-4/7 lg:w-1/2"
         >
-            <div class="flex flex-col h-full justify-evenly">
-                <Input label="Name" name="name" type="text" />
-                <Input label="Person" name="persons" type="number" />
-                <button class="w-full p-24 relative">
-                    <Image src={buttonImg} alt="submit button" class=""/>
-                    <span class="absolute top-1/2 -translate-y-5 -translate-x-10 text-4xl">{i18n.BUTTON_TEXT}</span>
+            <div
+                class="flex flex-col h-full justify-evenly items-center lg:h-1/2"
+            >
+                <div
+                    class="flex flex-col lg:flex-row h-1/2 justify-evenly items-center"
+                >
+                    <Input label="Name" name="name" type="text" />
+                    <Input label="Person" name="persons" type="number" />
+                </div>
+                <button
+                    class="w-full relative h-24 max-w-48 group cursor-pointer lg:max-w-32"
+                >
+                    <Image
+                        src={buttonImg}
+                        alt="submit button"
+                        class="transition-all duration-200 group-hover:scale-105 group-hover:brightness-90 group-active:scale-95"
+                    />
+                    <span
+                        class="absolute top-1/2 -translate-y-5 text-4xl transition-all duration-200 group-hover:scale-105 group-active:scale-95"
+                        class:list={currentLocale === "de"
+                            ? "-translate-x-10"
+                            : "-translate-x-8"}
+                    >
+                        {i18n.BUTTON_TEXT}
+                    </span>
                 </button>
             </div>
         </form>
@@ -32,8 +61,5 @@ const i18n = getI18N({currentLocale})
 <style>
     span {
         font-family: "Madina", ui-serif, Georgia, serif;
-    }
-    span:hover {
-
     }
 </style>

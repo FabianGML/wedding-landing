@@ -10,12 +10,20 @@ const { label, type, name } = Astro.props;
 ---
 
 <div class="relative px-3">
-    <label for={label} class="px-3 text-lg">{label}</label>
+    <label for={label} class="px-3 text-4xl md:text-6xl lg:text-4xl"
+        >{label}</label
+    >
     <Image src={input} alt="input" class="w-full" />
-    <input type={type} class="absolute bottom-1 left-0 w-full px-10" />
+    <input
+        type={type}
+        class="absolute -bottom-1 left-0 w-full px-10 md:text-3xl md:-bottom-3 lg:-bottom-1 lg:text-base"
+    />
 </div>
 
 <style>
+    label {
+        font-family: "Madina", ui-serif, Georgia, serif;
+    }
     input {
         height: calc(100% - 2rem);
         outline: none;
