@@ -9,8 +9,23 @@ interface Props {
 const { label, type, name } = Astro.props;
 ---
 
-<div class="relative">
+<div class="relative px-3">
+    <label for={label} class="px-3 text-lg">{label}</label>
     <Image src={input} alt="input" class="w-full" />
-    <label for={label}>{label}</label>
-    <input type={type} class="absolute inset-0 w-full h-full px-4" />
+    <input type={type} class="absolute bottom-1 left-0 w-full px-10" />
 </div>
+
+<style>
+    input {
+        height: calc(100% - 2rem);
+        outline: none;
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+</style>

@@ -2,19 +2,38 @@
 import SectionContainer from "@/components/SectionContainer.astro";
 import Input from "@/components/Input.astro";
 import { Image } from "astro:assets";
+// ----- Images -----
 import mobileForm from "@/assets/images/form/mobileForm.webp";
+import buttonImg from "@/assets/images/form/button.webp"
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro
+const i18n = getI18N({currentLocale})
 ---
 
 <SectionContainer>
     <div class="relative">
         <Image src={mobileForm} alt="mobile form" class="w-full" />
         <form
-            class="absolute w-11/12 left-1/2 -translate-x-1/2 top-1/2 -translate-y-10"
+            class="absolute w-11/12 left-1/2 -translate-x-1/2 top-1/2 -translate-y-10 h-96"
         >
-            <div>
-                <Input label="Name" name="" type="text" />
-                <Input label="Person" name="" type="number" />
+            <div class="flex flex-col h-full justify-evenly">
+                <Input label="Name" name="name" type="text" />
+                <Input label="Person" name="persons" type="number" />
+                <button class="w-full p-24 relative">
+                    <Image src={buttonImg} alt="submit button" class=""/>
+                    <span class="absolute top-1/2 -translate-y-5 -translate-x-10 text-4xl">{i18n.BUTTON_TEXT}</span>
+                </button>
             </div>
         </form>
     </div>
 </SectionContainer>
+
+<style>
+    span {
+        font-family: "Madina", ui-serif, Georgia, serif;
+    }
+    span:hover {
+
+    }
+</style>
