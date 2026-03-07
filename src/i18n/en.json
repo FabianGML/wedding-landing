@@ -45,5 +45,10 @@
     "BUTTON_TEXT": "Send",
     "FORM_TEXT": "It would fill us with joy to have you with us on one of the most important days of our lives. We want to share this special moment surrounded by the people we love most, and you are part of that story. To help us organize every detail in the best way, we ask you to confirm your attendance by filling out the form below. It won't take more than a moment. Your presence will make this day even more unforgettable for us. Thank you for joining us in this very special celebration!",
     "FORM_NAME_INPUT": "Name",
-    "FORM_PERSONS_INPUT": "Number of persons"
+    "FORM_PERSONS_INPUT": "Number of persons",
+    "FORM_SUCCESS": "Thank you for confirming your attendance!",
+    "FORM_ERROR": "There was an error sending your confirmation. Please try again.",
+    "FORM_LOADING": "Sending...",
+    "FORM_VALIDATION_NAME": "Please enter your name",
+    "FORM_VALIDATION_PERSONS": "Number of persons must be between 1 and 20"
 }

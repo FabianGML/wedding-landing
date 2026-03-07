@@ -4,6 +4,8 @@
     --color-main: #F8F3E7;
     --color-secondary: #470101;
     --color-accent: #e1c9be;
+    --font-titles: "Madina", ui-serif, Georgia, serif;
+    --font-body: "Lora", ui-serif, Georgia, serif;
 }
 
 @font-face {

@@ -45,5 +45,10 @@
     "BUTTON_TEXT": "Schicken",
     "FORM_TEXT": "Es würde uns sehr freuen, Sie an einem der wichtigsten Tage unseres Lebens bei uns zu haben. Wir möchten diesen besonderen Moment umgeben von den Menschen feiern, die wir am meisten lieben, und Sie gehören zu dieser Geschichte. Um uns zu helfen, jeden Detail bestmöglich zu organisieren, bitten wir Sie, Ihre Teilnahme durch das folgende Formular zu bestätigen. Es dauert nur einen Moment. Ihre Anwesenheit wird diesen Tag für uns noch unvergesslicher machen. Vielen Dank, dass Sie diese ganz besondere Feier mit uns teilen!",
     "FORM_NAME_INPUT": "Name",
-    "FORM_PERSONS_INPUT": "Anzahl der Personen"
+    "FORM_PERSONS_INPUT": "Anzahl der Personen",
+    "FORM_SUCCESS": "Vielen Dank für Ihre Bestätigung!",
+    "FORM_ERROR": "Beim Senden Ihrer Bestätigung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+    "FORM_LOADING": "Wird gesendet...",
+    "FORM_VALIDATION_NAME": "Bitte geben Sie Ihren Namen ein",
+    "FORM_VALIDATION_PERSONS": "Die Anzahl der Personen muss zwischen 1 und 20 liegen"
 }

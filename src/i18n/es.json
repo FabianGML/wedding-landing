@@ -44,5 +44,10 @@
     "BUTTON_TEXT": "Enviar",
     "FORM_TEXT": "Nos llenaría de alegría contar con tu presencia en uno de los días más importantes de nuestras vidas.Queremos compartir este momento tan especial rodeados de las personas que más queremos, y tú eres parte de esa historia.Para ayudarnos a organizar cada detalle de la mejor manera, te pedimos que confirmes tu asistencia llenando el siguiente formulario. No te tomará más que un momento.Tu presencia hará que este día sea aún más inolvidable para nosotros.¡Gracias por acompañarnos en esta celebración tan especial!",
     "FORM_NAME_INPUT": "Nombre",
-    "FORM_PERSONS_INPUT": "Numero de Personas"
+    "FORM_PERSONS_INPUT": "Numero de Personas",
+    "FORM_SUCCESS": "¡Gracias por confirmar tu asistencia!",
+    "FORM_ERROR": "Hubo un error al enviar tu confirmación. Por favor intenta de nuevo.",
+    "FORM_LOADING": "Enviando...",
+    "FORM_VALIDATION_NAME": "Por favor ingresa tu nombre",
+    "FORM_VALIDATION_PERSONS": "El número de personas debe ser entre 1 y 20"
 }

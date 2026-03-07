@@ -32,12 +32,19 @@ const i18n = getI18N({ currentLocale });
             loading="lazy"
         />
         <form
+            id="rsvp-form"
             class="absolute w-11/12 left-1/2 -translate-x-1/2 top-1/4 h-9/12 lg:h-5/12 lg:top-4/7"
+            data-loading={i18n.FORM_LOADING}
+            data-success={i18n.FORM_SUCCESS}
+            data-error={i18n.FORM_ERROR}
+            data-validation-name={i18n.FORM_VALIDATION_NAME}
+            data-validation-persons={i18n.FORM_VALIDATION_PERSONS}
         >
             <div class="flex flex-col h-full justify-evenly items-center">
                 <div
                     class="flex flex-col lg:flex-row h-1/2 justify-evenly items-center"
                 >
+                    <input type="text" name="website" class="absolute opacity-0 pointer-events-none" tabindex="-1" autocomplete="off" />
                     <Input
                         label={i18n.FORM_NAME_INPUT}
                         name="name"
@@ -70,6 +77,11 @@ const i18n = getI18N({ currentLocale });
                     </span>
                 </button>
             </div>
+            <p
+                id="form-message"
+                class="text-4xl font-semibold mt-3 text-center font-titles"
+            >
+            </p>
         </form>
     </div>
 </SectionContainer>
@@ -79,3 +91,83 @@ const i18n = getI18N({ currentLocale });
         font-family: "Madina", ui-serif, Georgia, serif;
     }
 </style>
+
+<script>
+    const form = document.getElementById("rsvp-form") as HTMLFormElement | null;
+    if (form) {
+        const msg = document.getElementById(
+            "form-message",
+        ) as HTMLParagraphElement | null;
+        const btn = form.querySelector("button") as HTMLButtonElement | null;
+
+        const showMessage = (text: string, isError: boolean) => {
+            if (!msg) return;
+            msg.textContent = text;
+            msg.classList.remove("hidden", "text-green-700", "text-red-700");
+            msg.classList.add(isError ? "text-red-700" : "text-secondary");
+        };
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const {
+                loading,
+                success,
+                error,
+                validationName,
+                validationPersons,
+            } = form.dataset as {
+                loading?: string;
+                success?: string;
+                error?: string;
+                validationName?: string;
+                validationPersons?: string;
+            };
+
+            const nameInput =
+                form.querySelector<HTMLInputElement>('input[name="name"]');
+            const personsInput = form.querySelector<HTMLInputElement>(
+                'input[name="persons"]',
+            );
+
+            const name = nameInput?.value.trim() ?? "";
+            const persons = parseInt(personsInput?.value ?? "", 10);
+
+            if (!name) {
+                showMessage(validationName ?? "Name is required.", true);
+                return;
+            }
+
+            if (isNaN(persons) || persons < 1 || persons > 20) {
+                showMessage(
+                    validationPersons ?? "Persons must be between 1 and 20.",
+                    true,
+                );
+                return;
+            }
+
+            if (btn) btn.disabled = true;
+            showMessage(loading ?? "Sending...", false);
+
+            try {
+                const res = await fetch("/api/rsvp", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, persons, website: form.querySelector<HTMLInputElement>('input[name="website"]')?.value ?? '' }),
+                });
+
+                if (!res.ok) throw new Error("Response not ok");
+
+                showMessage(success ?? "RSVP confirmed!", false);
+                form.reset();
+            } catch {
+                showMessage(
+                    error ?? "Something went wrong. Please try again.",
+                    true,
+                );
+            } finally {
+                if (btn) btn.disabled = false;
+            }
+        });
+    }
+</script>
