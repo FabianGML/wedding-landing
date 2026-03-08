@@ -9,13 +9,13 @@ importers:
   .:
     dependencies:
       '@astrojs/vercel':
-        specifier: ^9.0.4
+        specifier: 9.0.4
         version: 9.0.4(astro@5.16.0(@types/node@24.10.1)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3))(rollup@4.53.3)
       '@tailwindcss/vite':
         specifier: 4.1.17
         version: 4.1.17(vite@6.4.1(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2))
       '@vercel/analytics':
-        specifier: ^1.6.1
+        specifier: 1.6.1
         version: 1.6.1
       astro:
         specifier: 5.16.0
@@ -30,7 +30,7 @@ importers:
         specifier: 3.2.12
         version: 3.2.12
       resend:
-        specifier: ^6.9.3
+        specifier: 6.9.3
         version: 6.9.3
       sharp:
         specifier: 0.34.5
@@ -39,7 +39,7 @@ importers:
         specifier: 4.1.17
         version: 4.1.17
       zod:
-        specifier: ^4.3.6
+        specifier: 4.3.6
         version: 4.3.6
     devDependencies:
       '@types/leaflet':
