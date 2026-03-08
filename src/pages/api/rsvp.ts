@@ -167,7 +167,7 @@ export const POST: APIRoute = async ({ request }) => {
   const { error } = await resend.emails.send({
     from: 'RSVP <confirmation@pam-alex.com>',
     to: import.meta.env.RECIPIENT_EMAIL,
-    subject: `New RSVP from ${name}`,
+    subject: `You have a new confirmation from ${name}`,
     html: buildEmailHtml(escapeHtml(name), persons, submittedAt),
   });
 
