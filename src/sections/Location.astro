@@ -17,9 +17,11 @@ const i18n = getI18N({ currentLocale });
 
 <section>
     <!-- Mobile layout (< md) — marcoVertical.webp -->
-    <div class="md:hidden relative">
+    <div class="lg:hidden relative">
         <Image src={marcoVertical} alt="Marco" class="w-full h-auto" />
-        <h3 class="text-3xl absolute top-[8%] left-1/2 -translate-x-1/2">
+        <h3
+            class="text-3xl md:text-5xl absolute top-[8%] left-1/2 -translate-x-1/2"
+        >
             {i18n.LOCATION_TITLE}
         </h3>
         <div
@@ -30,14 +32,33 @@ const i18n = getI18N({ currentLocale });
                 image={hacienda}
             >
                 {i18n.LOCATION_SECTION_DESC_1}
-                <a
-                    href="https://www.google.com/maps?q=Hacienda+La+Galera,+Durango,+Dgo.+México"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-sm lg:text-lg bg-accent rounded-lg px-1 py-0.5 lg:px-2 lg:py-1 transition-colors duration-200 text-white hover:cursor-pointer hover:bg-accent/60 hover:text-secondary block w-fit"
-                >
-                    Hacienda La Galera
-                </a>
+                <div class="flex gap-4 items-center">
+                    <a
+                        href="https://www.google.com/maps/place/Templo+de+Nuestra+Se%C3%B1ora+de+Los+%C3%81ngeles/data=!4m2!3m1!1s0x869bc83f7bd8013b:0x14e018a00b7410bb?sa=X&ved=1t:242&ictx=111"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm lg:text-lg bg-accent rounded-lg px-1 py-0.5 lg:px-2 lg:py-1 transition-colors duration-200 text-white hover:cursor-pointer hover:bg-accent/60 hover:text-secondary block w-fit"
+                    >
+                        Templo de nuestra señora de los Ángeles
+                    </a>
+                    <span class="text-sm lg:text-lg text-gray-500"
+                        >17:45 hrs</span
+                    >
+                </div>
+                <span>{i18n.LOCATION_SECTION_DESC_1_1}</span>
+                <div class="flex gap-4 items-center">
+                    <a
+                        href="https://www.google.com/maps?q=Hacienda+La+Galera,+Durango,+Dgo.+México"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm lg:text-lg bg-accent rounded-lg px-1 py-0.5 lg:px-2 lg:py-1 transition-colors duration-200 text-white hover:cursor-pointer hover:bg-accent/60 hover:text-secondary block w-fit"
+                    >
+                        Hacienda La Galera
+                    </a>
+                    <span class="text-sm lg:text-lg text-gray-500"
+                        >20:00 hrs</span
+                    >
+                </div>
             </LocationCard>
             <LocationCard
                 title={i18n.LOCATION_SECTION_TITLE_2}
@@ -53,7 +74,7 @@ const i18n = getI18N({ currentLocale });
 
     <!-- Desktop layout (md+) — marco.webp -->
     <div
-        class="hidden md:flex flex-col md:flex-row lg:flex-row gap-10 relative"
+        class="hidden lg:flex flex-col lg:flex-row lg:flex-row gap-10 relative"
     >
         <Image src={marco} alt="Marco" class="w-full h-full" />
         <h3
@@ -69,14 +90,33 @@ const i18n = getI18N({ currentLocale });
                 image={hacienda}
             >
                 {i18n.LOCATION_SECTION_DESC_1}
-                <a
-                    href="https://www.google.com/maps?q=Hacienda+La+Galera,+Durango,+Dgo.+México"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="bg-accent rounded-lg px-1 py-0.5 lg:px-2 lg:py-1 transition-colors duration-200 text-white hover:cursor-pointer hover:bg-accent/60 hover:text-secondary block w-fit"
-                >
-                    Hacienda La Galera
-                </a>
+                <div class="flex gap-4 items-center">
+                    <a
+                        href="https://www.google.com/maps/place/Templo+de+Nuestra+Se%C3%B1ora+de+Los+%C3%81ngeles/data=!4m2!3m1!1s0x869bc83f7bd8013b:0x14e018a00b7410bb?sa=X&ved=1t:242&ictx=111"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm lg:text-lg bg-accent rounded-lg px-1 py-0.5 lg:px-2 lg:py-1 transition-colors duration-200 text-white hover:cursor-pointer hover:bg-accent/60 hover:text-secondary block w-fit"
+                    >
+                        Templo de nuestra señora de los Ángeles
+                    </a>
+                    <span class="text-sm lg:text-lg text-gray-500"
+                        >17:45 hrs</span
+                    >
+                </div>
+                <span>{i18n.LOCATION_SECTION_DESC_1_1}</span>
+                <div class="flex gap-4 items-center">
+                    <a
+                        href="https://www.google.com/maps?q=Hacienda+La+Galera,+Durango,+Dgo.+México"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm lg:text-lg bg-accent rounded-lg px-1 py-0.5 lg:px-2 lg:py-1 transition-colors duration-200 text-white hover:cursor-pointer hover:bg-accent/60 hover:text-secondary block w-fit"
+                    >
+                        Hacienda La Galera
+                    </a>
+                    <span class="text-sm lg:text-lg text-gray-500"
+                        >20:00 hrs</span
+                    >
+                </div>
             </LocationCard>
             <LocationCard
                 title={i18n.LOCATION_SECTION_TITLE_2}
