@@ -67,7 +67,7 @@ const i18n = getI18N({ currentLocale });
 
     <!-- Desktop layout (md+) — marco.webp -->
     <div
-        class="hidden lg:flex flex-col lg:flex-row lg:flex-row gap-10 relative"
+        class="hidden lg:flex flex-col lg:flex-row lg:flex-row gap-10 relative justify-center"
     >
         <Image src={marco} alt="Marco" class="w-full h-full" />
         <h3
@@ -76,11 +76,11 @@ const i18n = getI18N({ currentLocale });
             {i18n.LOCATION_TITLE}
         </h3>
         <div
-            class="absolute flex top-[26%] justify-evenly left-1/14 w-12/14 lg:left-0 lg:w-full"
+            class="absolute flex top-[26%] justify-between w-12/14 "
         >
             <LocationCard
-                title={i18n.LOCATION_SECTION_TITLE_1}
-                image={hacienda}
+                title={i18n.LOCATION_SECTION_TITLE_3}
+                image={horario}
             >
                 {i18n.LOCATION_SECTION_DESC_1}
                 <div class="flex gap-4 items-center">
@@ -92,23 +92,19 @@ const i18n = getI18N({ currentLocale });
                     >
                         Templo de nuestra señora de los Ángeles
                     </a>
-                    <span class="text-sm lg:text-lg text-gray-500"
-                        >17:45 hrs</span
-                    >
                 </div>
-                <span>{i18n.LOCATION_SECTION_DESC_1_1}</span>
+                <span class="text-lg">{i18n.LOCATION_SECTION_DESC_1_1}</span>
+                <span class="text-lg">{i18n.LOCATION_SECTION_DESC_1_2}</span>
                 <div class="flex gap-4 items-center">
                     <a
                         href="https://www.google.com/maps?q=Hacienda+La+Galera,+Durango,+Dgo.+México"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="text-sm lg:text-lg bg-accent rounded-lg px-1 py-0.5 lg:px-2 lg:py-1 transition-colors duration-200 text-white hover:cursor-pointer hover:bg-accent/60 hover:text-secondary block w-fit"
-                    >
+                        >
                         Hacienda La Galera
                     </a>
-                    <span class="text-sm lg:text-lg text-gray-500"
-                        >20:00 hrs</span
-                    >
+                <span class="text-lg">{i18n.LOCATION_SECTION_DESC_1_3}</span>
                 </div>
             </LocationCard>
             <LocationCard
@@ -116,9 +112,6 @@ const i18n = getI18N({ currentLocale });
                 image={dressCode}
             >
                 <data set:html={i18n.LOCATION_SECTION_DESC_2} />
-            </LocationCard>
-            <LocationCard title={i18n.LOCATION_SECTION_TITLE_3} image={horario}>
-                {i18n.LOCATION_SECTION_DESC_3}
             </LocationCard>
         </div>
     </div>
